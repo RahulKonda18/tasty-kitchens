@@ -3,6 +3,11 @@
   height: 155px;
   flex-shrink: 0;
 }
+.no-orders {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
 .not-found-container {
   width: 100vw;
   display: flex;
