@@ -1,7 +1,8 @@
 import {Switch, Route} from 'react-router-dom'
+import OrdersNone from './components/OrdersNone'
 import Login from './components/Login'
 import Home from './components/Home'
-import NotFound from './components/NotFound'
+
 import './App.css'
 
 /**     const sortByOptions = [
@@ -22,7 +23,7 @@ const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
     <Route exact path="/d" component={Home} />
-    <Route component={NotFound} />
+    <Route component={OrdersNone} />
   </Switch>
 )
 
