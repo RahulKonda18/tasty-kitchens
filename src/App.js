@@ -1,7 +1,6 @@
 import {Switch, Route} from 'react-router-dom'
-import PaymentSuccessful from './components/PaymentsSuccessful'
 import Login from './components/Login'
-import Home from './components/Home'
+import Footer from './components/Footer'
 
 import './App.css'
 
@@ -22,8 +21,7 @@ import './App.css'
 const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
-    <Route exact path="/d" component={Home} />
-    <Route component={PaymentSuccessful} />
+    <Route component={Footer} />
   </Switch>
 )
 
