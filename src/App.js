@@ -1,7 +1,7 @@
+import Cookies from 'js-cookie'
 import {Switch, Route} from 'react-router-dom'
-import Login from './components/Login'
-import Footer from './components/Footer'
-
+import NavBar from './components/NavBar'
+import NotFound from './components/NotFound'
 import './App.css'
 
 /**     const sortByOptions = [
@@ -18,11 +18,13 @@ import './App.css'
 ]
     * */
 
-const App = () => (
-  <Switch>
-    <Route exact path="/login" component={Login} />
-    <Route component={Footer} />
-  </Switch>
-)
-
+const App = () => {
+  Cookies.set('jwt_token', '15316546897486451564')
+  return (
+    <Switch>
+      <Route exact path="/" component={NavBar} />
+      <Route exact path="/not-found" component={NotFound} />
+    </Switch>
+  )
+}
 export default App

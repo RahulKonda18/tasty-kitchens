@@ -1,11 +1,11 @@
-import {Redirect} from 'react-router-dom'
 import notFound from '../Images/NotFound.png'
 import './index.css'
 
-const NotFound = () => {
+const NotFound = props => {
   const home = () => {
+    const {history} = props
     console.log('clicked')
-    return <Redirect to="/" />
+    return history.replace('/')
   }
   return (
     <div className="not-found-container">
