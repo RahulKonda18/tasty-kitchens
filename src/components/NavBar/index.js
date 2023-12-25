@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 import {IoMdMenu, IoIosCloseCircle} from 'react-icons/io'
 import Cookies from 'js-cookie'
 import logo from '../Images/logo.png'
@@ -25,10 +26,12 @@ class NavBar extends Component {
     return (
       <>
         <nav className="nav">
-          <div className="row">
-            <img className="navbar-logo" src={logo} alt="website logo" />
-            <h1 className="navbar-text">Tasty Kitchens</h1>
-          </div>
+          <Link to="/" style={{'text-decoration': 'none'}}>
+            <div className="row">
+              <img className="navbar-logo" src={logo} alt="website logo" />
+              <h1 className="navbar-text">Tasty Kitchens</h1>
+            </div>
+          </Link>
           <ul className="nav-list-lg">
             <li className={active ? 'active' : 'not-active'}>Home</li>
             <li className={!active ? 'active' : 'not-active'}>Cart</li>
