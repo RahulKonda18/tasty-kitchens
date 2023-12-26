@@ -54,6 +54,7 @@ class RestrauntsList extends Component {
           </div>
         </div>
         <hr className="hr" />
+        <div></div>
       </div>
     )
   }
