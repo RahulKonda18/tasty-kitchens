@@ -19,6 +19,16 @@ class NavBar extends Component {
     this.setState({displayItems: !displayItems})
   }
 
+  navToHome = () => {
+    const {history} = this.props
+    history.push('/')
+  }
+
+  navToCart = () => {
+    const {history} = this.props
+    history.push('/cart')
+  }
+
   render() {
     const {displayItems} = this.state
     let {active} = this.props
@@ -35,8 +45,18 @@ class NavBar extends Component {
             </div>
           </Link>
           <ul className="nav-list-lg">
-            <li className={active ? 'active' : 'not-active'}>Home</li>
-            <li className={!active ? 'active' : 'not-active'}>Cart</li>
+            <li
+              onClick={this.navToHome}
+              className={active ? 'active' : 'not-active'}
+            >
+              Home
+            </li>
+            <li
+              onClick={this.navToCart}
+              className={!active ? 'active' : 'not-active'}
+            >
+              Cart
+            </li>
             <li>
               <button
                 type="button"
@@ -51,8 +71,18 @@ class NavBar extends Component {
         </nav>
         <nav className={displayItems ? 'nav-row' : 'nav-items-2'}>
           <ul className="nav-list-lg2">
-            <li className={active ? 'active' : 'not-active'}>Home</li>
-            <li className={!active ? 'active' : 'not-active'}>Cart</li>
+            <li
+              onClick={this.navToHome}
+              className={active ? 'active' : 'not-active'}
+            >
+              Home
+            </li>
+            <li
+              onClick={this.navToCart}
+              className={!active ? 'active' : 'not-active'}
+            >
+              Cart
+            </li>
             <li>
               <button
                 type="button"

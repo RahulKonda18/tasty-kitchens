@@ -4,6 +4,7 @@ import Home from './components/Home'
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
 import SpecificRestaurant from './components/SpecificRestaurant'
+import Cart from './components/Cart'
 import './App.css'
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         path="/restaurant/:id"
         component={SpecificRestaurant}
       />
+      <ProtectedRoute exact path="/cart" component={Cart} />
       <Route component={NotFound} />
     </Switch>
   )

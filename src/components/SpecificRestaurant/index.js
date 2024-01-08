@@ -41,14 +41,24 @@ class SpecificRestaurant extends Component {
       imgUrl: data.image_url,
       location: data.location,
     }
-    const foodItems = data.food_items.map(each => ({
-      cost: each.cost,
-      id: each.id,
-      imgUrl: each.image_url,
-      name: each.name,
-      rating: each.rating,
-      quantity: 0,
-    }))
+    const foodItems = data.food_items.map(each => {
+      let p = 0
+      const v = JSON.parse(localStorage.getItem('cart')).find(
+        e => e.id === each.id,
+      )
+      if (v !== undefined) {
+        p = v.quantity
+      }
+      return {
+        cost: each.cost,
+        id: each.id,
+        imgUrl: each.image_url,
+        name: each.name,
+        rating: each.rating,
+        quantity: p,
+      }
+    })
+
     this.setState({isLoading: false, header, foodItems})
   }
 
@@ -69,7 +79,7 @@ class SpecificRestaurant extends Component {
         name: x.name,
       })
     } else {
-      y.quantity = x.quantity
+      y.quantity += 1
     }
     localStorage.setItem('cart', JSON.stringify(cart))
     this.setState({foodItems: [...foodItems]})
@@ -82,7 +92,7 @@ class SpecificRestaurant extends Component {
     const x = foodItems.find(each => each.id === id)
     x.quantity -= 1
     const y = cart.find(each => each.id === id)
-    y.quantity = x.quantity
+    y.quantity -= 1
     if (y.quantity === 0) {
       cart = cart.filter(each => each.id !== id)
     }

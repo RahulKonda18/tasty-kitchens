@@ -1,11 +1,11 @@
-import {Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import none from '../Images/NoOrders.png'
 import './index.css'
 
-const OrdersNone = () => {
+const OrdersNone = props => {
   const home = () => {
-    console.log('clicked')
-    return <Redirect to="/" />
+    const {history} = props
+    history.push('/')
   }
   return (
     <div className="not-found-container">
@@ -21,4 +21,4 @@ const OrdersNone = () => {
   )
 }
 
-export default OrdersNone
+export default withRouter(OrdersNone)
