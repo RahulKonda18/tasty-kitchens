@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {IoMdMenu, IoIosCloseCircle} from 'react-icons/io'
 import Cookies from 'js-cookie'
 import logo from '../Images/logo.png'
@@ -11,7 +11,7 @@ class NavBar extends Component {
   onClickLogout = () => {
     const {history} = this.props
     Cookies.remove('jwt_token')
-    history.push('/not-found')
+    history.push('/')
   }
 
   change = () => {
@@ -22,7 +22,6 @@ class NavBar extends Component {
   render() {
     const {displayItems} = this.state
     const active = true
-    console.log(displayItems)
     return (
       <>
         <nav className="nav">
@@ -68,4 +67,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar
+export default withRouter(NavBar)

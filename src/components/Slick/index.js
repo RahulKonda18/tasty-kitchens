@@ -39,7 +39,6 @@ class Slick extends Component {
     }
     const response = await fetch(apiUrl, options)
     const data = await response.json()
-    console.log(data)
     const results = data.offers.map(each => ({
       id: each.id,
       imageUrl: each.image_url,
@@ -49,7 +48,6 @@ class Slick extends Component {
 
   render() {
     const {isLoading, data} = this.state
-    console.log(isLoading)
     return !isLoading ? (
       <Slider {...settings}>
         {data.map(each => (

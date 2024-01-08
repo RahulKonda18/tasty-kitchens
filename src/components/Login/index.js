@@ -35,9 +35,7 @@ class Login extends Component {
       body: JSON.stringify(userDetails),
     }
     const response = await fetch(apiLoginUrl, options)
-    console.log(response)
     const data = await response.json()
-    console.log(data)
     if (response.ok === true) {
       this.successLogin(data.jwt_token)
     } else {
@@ -47,7 +45,6 @@ class Login extends Component {
 
   render() {
     const {username, password, msg} = this.state
-    console.log(username, password, msg)
     return (
       <div className="login-background">
         <div className="left-part">
@@ -94,26 +91,26 @@ class Login extends Component {
           </div>
           <form className="login-card-mobile" onSubmit={this.onSubmitForm}>
             <div className="left-align">
-              <label htmlFor="username" className="labels">
+              <label htmlFor="username2" className="labels">
                 USERNAME
               </label>
               <input
                 type="text"
                 onChange={this.onChangeUsername}
                 className="input"
-                id="username"
+                id="username2"
                 value={username}
               />
             </div>
             <div className="left-align">
-              <label className="labels" htmlFor="password">
+              <label className="labels" htmlFor="password2">
                 PASSWORD
               </label>
               <input
                 type="password"
                 onChange={this.onChangePassword}
                 className="input"
-                id="password"
+                id="password2"
                 value={password}
               />
             </div>

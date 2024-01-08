@@ -2,7 +2,7 @@ import {Switch, Route} from 'react-router-dom'
 import Login from './components/Login'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
-import ProtectedRoute from './components/Protectedroute'
+import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 const App = () => (

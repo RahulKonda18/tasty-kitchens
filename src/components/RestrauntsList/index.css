@@ -76,6 +76,17 @@
   font-weight: 500;
   line-height: 24px; /* 150% */
 }
+.results-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin-left: 0px;
+  width: 100%;
+  padding-left: 0px;
+  flex-wrap: wrap;
+}
 
 @media screen and (max-width: 768px) {
   .top-section {
@@ -94,5 +105,8 @@
   }
   .pop-desc {
     font-size: 12px;
+  }
+  .results-list {
+    justify-content: flex-start;
   }
 }
