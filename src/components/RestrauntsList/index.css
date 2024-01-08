@@ -69,6 +69,13 @@
   height: 1px;
   border: 0px solid transparent;
 }
+.select-item {
+  color: var(--Light-blue-gray-600, #475569);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
 
 @media screen and (max-width: 768px) {
   .top-section {
