@@ -54,6 +54,11 @@ class Cart extends Component {
     this.setState({foodItems: [...o], total: price})
   }
 
+  gotoPaid = () => {
+    const {history} = this.props
+    history.push('/paid')
+  }
+
   render() {
     const {foodItems, total} = this.state
     console.log(foodItems)
@@ -82,7 +87,11 @@ class Cart extends Component {
               <p className="t">₹{total}</p>
             </div>
             <div className="end">
-              <button type="button" className="logout-button">
+              <button
+                type="button"
+                className="logout-button"
+                onClick={this.gotoPaid}
+              >
                 Place Order
               </button>
             </div>

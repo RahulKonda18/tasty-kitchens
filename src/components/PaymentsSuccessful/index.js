@@ -1,24 +1,28 @@
-import {Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import none from '../Images/PaymentSuccessful.png'
+import NavBar from '../NavBar'
 import './index.css'
 
-const PaymentSuccessful = () => {
+const PaymentSuccessful = props => {
   const home = () => {
-    console.log('clicked')
-    return <Redirect to="/" />
+    const {history} = props
+    history.push('./')
   }
   return (
-    <div className="not-found-container">
-      <img src={none} alt="no orders" className="no-orders" />
-      <h1 className="not-found-heading">Payment Successful</h1>
-      <p className="not-found-description">
-        Thank you for ordering Your payment is successfully completed.
-      </p>
-      <button onClick={home} className="not-found-button" type="button">
-        Go To Home Page
-      </button>
-    </div>
+    <>
+      <NavBar />
+      <div className="not-found-container">
+        <img src={none} alt="no orders" className="no-orders" />
+        <h1 className="not-found-heading">Payment Successful</h1>
+        <p className="not-found-description">
+          Thank you for ordering Your payment is successfully completed.
+        </p>
+        <button onClick={home} className="not-found-button" type="button">
+          Go To Home Page
+        </button>
+      </div>
+    </>
   )
 }
 
-export default PaymentSuccessful
+export default withRouter(PaymentSuccessful)
