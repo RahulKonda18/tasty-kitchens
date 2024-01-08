@@ -3,8 +3,16 @@ import {FiMinusSquare, FiPlusSquare} from 'react-icons/fi'
 import './index.css'
 
 const FoodItem = props => {
-  const {details} = props
-  const {cost, imgUrl, name, rating, quantity} = details
+  const {details, increment, decrement} = props
+  const {cost, id, imgUrl, name, rating, quantity} = details
+
+  const onIncrement = () => {
+    increment(id)
+  }
+
+  const onDecrement = () => {
+    decrement(id)
+  }
 
   return (
     <li className="food-item">
@@ -17,14 +25,14 @@ const FoodItem = props => {
           {rating}
         </h2>
         {quantity === 0 ? (
-          <button className="button-add" type="button">
+          <button className="button-add" type="button" onClick={onIncrement}>
             ADD
           </button>
         ) : (
           <div className="plus-minus">
-            <FiMinusSquare color="#0F172A" size={20} />{' '}
+            <FiMinusSquare color="#0F172A" size={20} onClick={onDecrement} />{' '}
             <p className="quantity">{quantity}</p>
-            <FiPlusSquare color="#0F172A" size={20} />
+            <FiPlusSquare color="#0F172A" size={20} onClick={onIncrement} />
           </div>
         )}
       </div>

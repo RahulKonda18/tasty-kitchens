@@ -48,10 +48,24 @@ class SpecificRestaurant extends Component {
       imgUrl: each.image_url,
       name: each.name,
       rating: each.rating,
-      quantity: 1,
+      quantity: 0,
     }))
     console.log(header, foodItems)
     this.setState({isLoading: false, header, foodItems})
+  }
+
+  onIncrement = id => {
+    const {foodItems} = this.state
+    const x = foodItems.find(each => each.id === id)
+    x.quantity += 1
+    this.setState({foodItems: [...foodItems]})
+  }
+
+  onDecrement = id => {
+    const {foodItems} = this.state
+    const x = foodItems.find(each => each.id === id)
+    x.quantity -= 1
+    this.setState({foodItems: [...foodItems]})
   }
 
   render() {
@@ -94,7 +108,12 @@ class SpecificRestaurant extends Component {
             </div>
             <ul className="food-list">
               {foodItems.map(each => (
-                <FoodItem key={each.id} details={each} />
+                <FoodItem
+                  key={each.id}
+                  details={each}
+                  increment={this.onIncrement}
+                  decrement={this.onDecrement}
+                />
               ))}
             </ul>
           </>
