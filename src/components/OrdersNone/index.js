@@ -1,6 +1,5 @@
 import {withRouter} from 'react-router-dom'
 import none from '../Images/NoOrders.png'
-import NavBar from '../NavBar'
 import './index.css'
 
 const OrdersNone = props => {
@@ -10,7 +9,6 @@ const OrdersNone = props => {
   }
   return (
     <>
-      <NavBar />
       <div className="not-found-container">
         <img src={none} alt="no orders" className="not-found-image" />
         <h1 className="not-found-heading">No Orders Yet!</h1>
