@@ -8,7 +8,7 @@ import FoodItem from '../FoodItem'
 import './index.css'
 
 class SpecificRestaurant extends Component {
-  state = {isLoading: true, header: [], foodItems: [], cart: []}
+  state = {isLoading: true, header: [], foodItems: []}
 
   componentDidMount() {
     this.getList()
@@ -32,7 +32,6 @@ class SpecificRestaurant extends Component {
     }
     const response = await fetch(apiUrl, options)
     const data = await response.json()
-    console.log(data)
     const header = {
       costOfTwo: data.cost_for_two,
       cuisine: data.cuisine,
@@ -50,28 +49,54 @@ class SpecificRestaurant extends Component {
       rating: each.rating,
       quantity: 0,
     }))
-    console.log(header, foodItems)
     this.setState({isLoading: false, header, foodItems})
   }
 
   onIncrement = id => {
+    const car = localStorage.getItem('cart')
+    const cart = JSON.parse(car)
+    console.log(cart)
     const {foodItems} = this.state
     const x = foodItems.find(each => each.id === id)
     x.quantity += 1
+    const y = cart.find(each => each.id === id)
+    if (y === undefined) {
+      cart.push({
+        cost: x.cost,
+        id,
+        quantity: x.quantity,
+        imageUrl: x.imageUrl,
+        name: x.name,
+      })
+    } else {
+      y.quantity = x.quantity
+    }
+    localStorage.setItem('cart', JSON.stringify(cart))
     this.setState({foodItems: [...foodItems]})
   }
 
   onDecrement = id => {
+    const car = localStorage.getItem('cart')
+    let cart = JSON.parse(car)
     const {foodItems} = this.state
     const x = foodItems.find(each => each.id === id)
     x.quantity -= 1
+    const y = cart.find(each => each.id === id)
+    y.quantity = x.quantity
+    if (y.quantity === 0) {
+      cart = cart.filter(each => each.id !== id)
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart))
+
     this.setState({foodItems: [...foodItems]})
   }
 
   render() {
-    const {isLoading, cart, header, foodItems} = this.state
+    const car = localStorage.getItem('cart')
+    const {isLoading, header, foodItems} = this.state
     const {costOfTwo, cuisine, rating, reviews, name, imgUrl, location} = header
-    console.log(isLoading, cart, header, foodItems)
+    console.log(car, foodItems)
     return (
       <>
         <NavBar active />

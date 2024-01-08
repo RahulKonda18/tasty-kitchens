@@ -6,17 +6,20 @@ import ProtectedRoute from './components/ProtectedRoute'
 import SpecificRestaurant from './components/SpecificRestaurant'
 import './App.css'
 
-const App = () => (
-  <Switch>
-    <Route exact path="/login" component={Login} />
-    <ProtectedRoute exact path="/" component={Home} />
-    <ProtectedRoute
-      exact
-      path="/restaurant/:id"
-      component={SpecificRestaurant}
-    />
-    <Route component={NotFound} />
-  </Switch>
-)
+const App = () => {
+  localStorage.setItem('cart', JSON.stringify([]))
+  return (
+    <Switch>
+      <Route exact path="/login" component={Login} />
+      <ProtectedRoute exact path="/" component={Home} />
+      <ProtectedRoute
+        exact
+        path="/restaurant/:id"
+        component={SpecificRestaurant}
+      />
+      <Route component={NotFound} />
+    </Switch>
+  )
+}
 
 export default App
