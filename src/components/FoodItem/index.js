@@ -1,9 +1,10 @@
 import {FaStar} from 'react-icons/fa'
+import {FiMinusSquare, FiPlusSquare} from 'react-icons/fi'
 import './index.css'
 
 const FoodItem = props => {
   const {details} = props
-  const {cost, imgUrl, name, rating} = details
+  const {cost, imgUrl, name, rating, quantity} = details
 
   return (
     <li className="food-item">
@@ -15,9 +16,17 @@ const FoodItem = props => {
           <FaStar color="#ffa412" />
           {rating}
         </h2>
-        <button className="button-add" type="button">
-          ADD
-        </button>
+        {quantity === 0 ? (
+          <button className="button-add" type="button">
+            ADD
+          </button>
+        ) : (
+          <div className="plus-minus">
+            <FiMinusSquare color="#0F172A" size={20} />{' '}
+            <p className="quantity">{quantity}</p>
+            <FiPlusSquare color="#0F172A" size={20} />
+          </div>
+        )}
       </div>
     </li>
   )

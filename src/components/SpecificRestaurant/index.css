@@ -78,3 +78,19 @@
     border-radius: 150px;
   }
 }
+@media screen and (max-width: 500px) {
+  .rest-heading {
+    font-size: 16px;
+  }
+  .rests-cuisine {
+    font-size: 12px;
+  }
+  .rest-star {
+    font-size: 14px;
+  }
+  .restaurant-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+  }
+}

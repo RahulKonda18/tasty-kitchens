@@ -24,6 +24,8 @@
 .food-name {
   color: var(--Light-blue-gray-700, #334155);
   font-size: 16px;
+  margin-top: 5px;
+
   font-style: normal;
   font-weight: 700;
   line-height: 24px; /* 150% */
@@ -37,6 +39,8 @@
   font-style: normal;
   font-weight: 500;
   margin: 0px;
+  margin-top: 5px;
+
   line-height: 16px; /* 114.286% */
 }
 .button-add {
@@ -46,6 +50,8 @@
   border: 2px solid #ffa412;
   border-radius: 5px;
   margin: 0px;
+  margin-top: 5px;
+
   background-color: #fff;
 }
 .food-names {
@@ -56,7 +62,26 @@
   line-height: 24px; /* 150% */
   letter-spacing: 0.2px;
   margin: 0px;
+  margin-top: 5px;
 }
+.plus-minus {
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+.quantity {
+  color: var(--Light-blue-gray-600, #475569);
+  font-size: 16px;
+  font-style: normal;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
 @media screen and (min-width: 1000px) {
   .food-item {
     width: 500px;

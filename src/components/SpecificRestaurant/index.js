@@ -48,6 +48,7 @@ class SpecificRestaurant extends Component {
       imgUrl: each.image_url,
       name: each.name,
       rating: each.rating,
+      quantity: 1,
     }))
     console.log(header, foodItems)
     this.setState({isLoading: false, header, foodItems})
