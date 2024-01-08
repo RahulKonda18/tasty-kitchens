@@ -3,13 +3,19 @@ import Login from './components/Login'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
+import SpecificRestaurant from './components/SpecificRestaurant'
 import './App.css'
 
 const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
     <ProtectedRoute exact path="/" component={Home} />
-    <Route exact path="/not-found" component={NotFound} />
+    <ProtectedRoute
+      exact
+      path="/restaurant/:id"
+      component={SpecificRestaurant}
+    />
+    <Route component={NotFound} />
   </Switch>
 )
 

@@ -5,7 +5,7 @@ import Footer from '../Footer'
 
 const Home = () => (
   <>
-    <NavBar />
+    <NavBar active />
     <Slick />
     <RestrauntsList />
     <Footer />

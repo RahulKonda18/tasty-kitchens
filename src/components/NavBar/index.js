@@ -21,7 +21,10 @@ class NavBar extends Component {
 
   render() {
     const {displayItems} = this.state
-    const active = true
+    let {active} = this.props
+    if (active === undefined) {
+      active = true
+    }
     return (
       <>
         <nav className="nav">

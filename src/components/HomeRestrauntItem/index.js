@@ -13,7 +13,7 @@ const HomeRestrauntItem = props => {
 
   return (
     <li onClick={loadRestraunt} className="restraunt-item-row">
-      <div>
+      <div className="image-c">
         <img src={imgUrl} alt={name} className="rest-image" />
       </div>
       <div className="rest-details">
