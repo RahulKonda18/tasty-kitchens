@@ -65,7 +65,6 @@ class SpecificRestaurant extends Component {
   onIncrement = id => {
     const car = localStorage.getItem('cart')
     const cart = JSON.parse(car)
-    console.log(cart)
     const {foodItems} = this.state
     const x = foodItems.find(each => each.id === id)
     x.quantity += 1
@@ -75,12 +74,13 @@ class SpecificRestaurant extends Component {
         cost: x.cost,
         id,
         quantity: x.quantity,
-        imageUrl: x.imageUrl,
+        imageUrl: x.imgUrl,
         name: x.name,
       })
     } else {
       y.quantity += 1
     }
+    console.log(cart)
     localStorage.setItem('cart', JSON.stringify(cart))
     this.setState({foodItems: [...foodItems]})
   }
@@ -103,10 +103,8 @@ class SpecificRestaurant extends Component {
   }
 
   render() {
-    const car = localStorage.getItem('cart')
     const {isLoading, header, foodItems} = this.state
     const {costOfTwo, cuisine, rating, reviews, name, imgUrl, location} = header
-    console.log(car, foodItems)
     return (
       <>
         <NavBar active />
