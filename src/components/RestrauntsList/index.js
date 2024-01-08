@@ -4,6 +4,7 @@ import {MdSort} from 'react-icons/md'
 import Loader from 'react-loader-spinner'
 import {TiArrowSortedDown} from 'react-icons/ti'
 import HomeRestrauntItem from '../HomeRestrauntItem'
+import Pagination from '../Pagination'
 import './index.css'
 
 const sortByOptions = [
@@ -61,12 +62,41 @@ class RestrauntsList extends Component {
     this.setState({data: finalData, isLoading: false})
   }
 
-  onChangeSortBy = e => {
-    this.setState({sortBy: e.target.value})
+  incrementActivePage = async () => {
+    const {activePage} = this.state
+    let x = 0
+    if (activePage === 4) {
+      x = 4
+      await this.setState({activePage: x})
+      this.getData()
+    } else {
+      x = activePage + 1
+      await this.setState({activePage: x})
+      this.getData()
+    }
+  }
+
+  decrementActivePage = async () => {
+    const {activePage} = this.state
+    let x = 0
+    if (activePage === 1) {
+      x = 1
+      await this.setState({activePage: x})
+      this.getData()
+    } else {
+      x = activePage - 1
+      await this.setState({activePage: x})
+      this.getData()
+    }
+  }
+
+  onChangeSortBy = async e => {
+    await this.setState({sortBy: e.target.value})
+    this.getData()
   }
 
   render() {
-    const {sortBy, isLoading, data} = this.state
+    const {sortBy, isLoading, data, activePage} = this.state
     return (
       <div className="restraunts-list-bg">
         <div className="top-section">
@@ -106,11 +136,18 @@ class RestrauntsList extends Component {
             <Loader type="ThreeDots" color="orange" height="50" width="50" />
           </div>
         ) : (
-          <ul className="results-list">
-            {data.map(each => (
-              <HomeRestrauntItem key={each.id} data={each} />
-            ))}
-          </ul>
+          <>
+            <ul className="results-list">
+              {data.map(each => (
+                <HomeRestrauntItem key={each.id} data={each} />
+              ))}
+            </ul>
+            <Pagination
+              decrementActivePage={this.decrementActivePage}
+              incrementActivePage={this.incrementActivePage}
+              active={activePage}
+            />
+          </>
         )}
       </div>
     )

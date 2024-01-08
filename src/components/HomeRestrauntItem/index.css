@@ -51,14 +51,17 @@
   line-height: 24px; /* 133.333% */
   letter-spacing: 0.2px;
 }
-@media screen and(max-width: 400px) {
+@media screen and (max-width: 400px) {
   .restraunt-item-row {
-    width: 200px;
+    width: 100% !important;
   }
   .rest-image {
-    width: 100px;
+    width: 120px !important;
   }
   .rest-details {
-    width: 100px;
+    width: 55% !important;
+  }
+  .image-c {
+    width: 35% !important;
   }
 }
