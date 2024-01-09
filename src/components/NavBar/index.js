@@ -19,7 +19,7 @@ class NavBar extends Component {
     this.setState({displayItems: !displayItems})
   }
 
-  navToHome = () => {
+  /* navToHome = () => {
     const {history} = this.props
     history.push('/')
   }
@@ -28,7 +28,7 @@ class NavBar extends Component {
     const {history} = this.props
     history.push('/cart')
   }
-
+*/
   render() {
     const {displayItems} = this.state
     let {active} = this.props
@@ -46,20 +46,10 @@ class NavBar extends Component {
           </Link>
           <ul className="nav-list-lg">
             <Link to="/" style={{'text-decoration': 'none'}}>
-              <li
-                onClick={this.navToHome}
-                className={active ? 'active' : 'not-active'}
-              >
-                Home
-              </li>
+              <li className={active ? 'active' : 'not-active'}>Home</li>
             </Link>
             <Link to="/cart" style={{'text-decoration': 'none'}}>
-              <li
-                onClick={this.navToCart}
-                className={!active ? 'active' : 'not-active'}
-              >
-                Cart
-              </li>
+              <li className={!active ? 'active' : 'not-active'}>Cart</li>
             </Link>
             <li>
               <button

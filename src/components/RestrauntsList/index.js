@@ -23,7 +23,7 @@ const sortByOptions = [
 
 class RestrauntsList extends Component {
   state = {
-    sortBy: sortByOptions[0].value,
+    sortBy: sortByOptions[1].value,
     activePage: 1,
     isLoading: true,
     data: [],
@@ -102,7 +102,7 @@ class RestrauntsList extends Component {
       <div className="restraunts-list-bg">
         <div className="top-section">
           <div className="descriptions">
-            <h1 className="pop-heading">Popular Restraunts</h1>
+            <h1 className="pop-heading">Popular Restaurants</h1>
             <p className="pop-desc">
               Select Your favourite restaurant special dish and make your day
               happy...
@@ -110,8 +110,9 @@ class RestrauntsList extends Component {
           </div>
           <div className="sort-box">
             <MdSort size={25} color="#475569" />
+            <p className="pop-select">Sort By </p>
             <select
-              className="pop-select"
+              className="pop-selects"
               value={sortBy}
               onChange={this.onChangeSortBy}
             >

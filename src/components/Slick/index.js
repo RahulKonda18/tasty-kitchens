@@ -50,13 +50,18 @@ class Slick extends Component {
   render() {
     const {isLoading, data} = this.state
     return !isLoading ? (
-      <Slider {...settings}>
-        {data.map(each => (
-          <div key={each.id} className="slider-item">
-            <img className="item" src={each.imageUrl} alt="offer " />
-          </div>
-        ))}
-      </Slider>
+      <div className="slider-item">
+        <Slider {...settings}>
+          {data.map(each => (
+            <img
+              key={each.id}
+              className="item"
+              src={each.imageUrl}
+              alt="offer"
+            />
+          ))}
+        </Slider>
+      </div>
     ) : (
       <div testid="restaurants-offers-loader" className="loader-container">
         <Loader type="ThreeDots" color="orange" height="50" width="50" />
