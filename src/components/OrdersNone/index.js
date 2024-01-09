@@ -17,7 +17,7 @@ const OrdersNone = props => {
         </p>
         <Link to="/">
           <button onClick={home} className="not-found-button" type="button">
-            Order now
+            Order Now
           </button>
         </Link>
       </div>

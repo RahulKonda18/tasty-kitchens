@@ -51,15 +51,14 @@ class NavBar extends Component {
             <Link to="/cart" style={{'text-decoration': 'none'}}>
               <li className={!active ? 'active' : 'not-active'}>Cart</li>
             </Link>
-            <li>
-              <button
-                type="button"
-                className="logout-button"
-                onClick={this.onClickLogout}
-              >
-                Logout
-              </button>
-            </li>
+
+            <button
+              type="button"
+              className="logout-button"
+              onClick={this.onClickLogout}
+            >
+              Logout
+            </button>
           </ul>
           <IoMdMenu size={25} onClick={this.change} className="ham" />
         </nav>
@@ -81,15 +80,14 @@ class NavBar extends Component {
                 Cart
               </li>
             </Link>
-            <li>
-              <button
-                type="button"
-                className="logout-button"
-                onClick={this.onClickLogout}
-              >
-                Logout
-              </button>
-            </li>
+
+            <button
+              type="button"
+              className="logout-button"
+              onClick={this.onClickLogout}
+            >
+              Logout
+            </button>
           </ul>
           <IoIosCloseCircle size={25} className="ham" onClick={this.change} />
         </nav>

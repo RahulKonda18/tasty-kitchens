@@ -30,7 +30,9 @@ const CartItem = props => {
             >
               -
             </button>
-            <p className="quantity">{quantity}</p>
+            <h1 testid="item-quantity" className="quantity">
+              {quantity}
+            </h1>
             <button
               className="pm"
               type="button"

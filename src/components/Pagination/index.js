@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import {FaArrowCircleLeft, FaArrowCircleRight} from 'react-icons/fa'
+// import {FaArrowCircleLeft, FaArrowCircleRight} from 'react-icons/fa'
 import './index.css'
 
 const Pagination = props => {

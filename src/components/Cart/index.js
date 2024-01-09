@@ -10,14 +10,22 @@ class Cart extends Component {
   state = {foodItems: [], total: 0}
 
   componentDidMount() {
-    const a = localStorage.getItem('cartData')
-    const b = JSON.parse(a)
+    const b = JSON.parse(localStorage.getItem('cartData')) || []
     let price = 0
     const j = b.forEach(each => {
       price += each.cost * each.quantity
     })
+    const cartItems = b.map(each => ({
+      cost: each.cost,
+      quantity: each.quantity,
+      id: each.id,
+      imageUrl: each.imageUrl,
+      name: each.name,
+    }))
+    console.log('before', b)
+    console.log('after', cartItems)
     console.log(j)
-    this.setState({foodItems: b, total: price})
+    this.setState({foodItems: cartItems, total: price})
   }
 
   onIncrement = id => {
