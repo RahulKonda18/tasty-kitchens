@@ -26,10 +26,10 @@ const HomeRestrauntItem = props => {
           <div className="rest-details">
             <h1 className="rest-name">{name}</h1>
             <p className="rest-cuisine">{cuisine}</p>
-            <div className="rest-cuisine">
+            <div className="rest-cuisines">
               <FaStar size={20} color={ratingColor} />
               <p className="rest-rating">{rating}</p>
-              <h1>({reviews} ratings)</h1>
+              <h1 className="rest-rating">({reviews} ratings)</h1>
             </div>
           </div>
         </li>

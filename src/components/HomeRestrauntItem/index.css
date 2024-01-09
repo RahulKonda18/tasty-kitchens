@@ -59,9 +59,23 @@
     width: 120px !important;
   }
   .rest-details {
-    width: 55% !important;
+    width: 200px;
   }
   .image-c {
     width: 35% !important;
   }
+}
+.rest-cuisines {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--Light-blue-gray-500, #64748b);
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-style: normal;
+  height: 25px;
+  font-weight: 400;
+  line-height: 24px; /* 171.429% */
+  margin: 0px;
 }
