@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {withRouter} from 'react-router-dom'
 import {FaStar} from 'react-icons/fa'
 import './index.css'
@@ -12,9 +13,13 @@ const HomeRestrauntItem = props => {
   }
 
   return (
-    <li onClick={loadRestraunt} className="restraunt-item-row">
+    <li
+      onClick={loadRestraunt}
+      className="restraunt-item-row"
+      test-id="restaurant-item"
+    >
       <div className="image-c">
-        <img src={imgUrl} alt={name} className="rest-image" />
+        <img src={imgUrl} alt="restaurant" className="rest-image" />
       </div>
       <div className="rest-details">
         <h1 className="rest-name">{name}</h1>

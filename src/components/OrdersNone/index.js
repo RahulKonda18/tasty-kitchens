@@ -1,4 +1,4 @@
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 import none from '../Images/NoOrders.png'
 import './index.css'
 
@@ -10,14 +10,16 @@ const OrdersNone = props => {
   return (
     <>
       <div className="not-found-container">
-        <img src={none} alt="no orders" className="not-found-image" />
-        <h1 className="not-found-heading">No Orders Yet!</h1>
+        <img src={none} alt="empty cart" className="no-orders" />
+        <h1 className="not-found-heading">No Order Yet!</h1>
         <p className="not-found-description">
           Your cart is empty. Add something from the menu.
         </p>
-        <button onClick={home} className="not-found-button" type="button">
-          Order Now
-        </button>
+        <Link to="/">
+          <button onClick={home} className="not-found-button" type="button">
+            Order now
+          </button>
+        </Link>
       </div>
     </>
   )

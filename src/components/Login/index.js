@@ -1,3 +1,4 @@
+import {Redirect} from 'react-router-dom'
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import img from '../Images/Large-Login.jpeg'
@@ -45,13 +46,16 @@ class Login extends Component {
 
   render() {
     const {username, password, msg} = this.state
+    const x = Cookies.get('jwt_token')
+    if (x !== undefined) return <Redirect to="/" />
+
     return (
       <div className="login-background">
         <div className="left-part">
           <form className="login-card" onSubmit={this.onSubmitForm}>
-            <img src={logo} alt="logo" className="login-logo" />
+            <img src={logo} alt="website logo" className="login-logo" />
             <h1 className="logo-name">Tasty Kitchens</h1>
-            <p className="login-text">Login</p>
+            <h1 className="login-text">Login</h1>
             <div className="left-align">
               <label htmlFor="username" className="labels">
                 USERNAME
@@ -84,10 +88,12 @@ class Login extends Component {
             </button>
           </form>
         </div>
-        <img src={img} alt="login" className="image-login" />
+        <img src={img} alt="website login" className="image-login" />
         <div className="mobile-container">
           <div className="top-bg">
-            <p className="login-text-mobile">Login</p>
+            <img src={logo} alt="website logo" className="login-logo" />
+            <h1 className="logo-name">Tasty Kitchens</h1>
+            <h1 className="login-text-mobile">Login</h1>
           </div>
           <form className="login-card-mobile" onSubmit={this.onSubmitForm}>
             <div className="left-align">

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {
   FaPinterestSquare,
   FaInstagram,
@@ -17,16 +18,16 @@ const Footer = () => (
       The only thing we are serious about is food. Contact us on
     </p>
     <div className="footer-social-container">
-      <div data-testid="pintrest-social-icon" className="footer-item">
+      <div testid="pintrest-social-icon" className="footer-item">
         <FaPinterestSquare size={25} color="white" />
       </div>
-      <div data-testid="instagram-social-icon" className="footer-item">
+      <div testid="instagram-social-icon" className="footer-item">
         <FaInstagram size={25} color="white" />
       </div>
-      <div data-testid="twitter-social-icon" className="footer-item">
+      <div testid="twitter-social-icon" className="footer-item">
         <FaTwitter size={25} color="white" />
       </div>
-      <div data-testid="facebook-social-icon" className="footer-item">
+      <div testid="facebook-social-icon" className="footer-item">
         <FaFacebookSquare size={25} color="white" />
       </div>
     </div>

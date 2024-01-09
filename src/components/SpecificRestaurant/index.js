@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {FaStar, FaRupeeSign} from 'react-icons/fa'
@@ -109,10 +110,7 @@ class SpecificRestaurant extends Component {
       <>
         <NavBar active />
         {isLoading ? (
-          <div
-            data-testid="restaurants-list-loader"
-            className="loader-container"
-          >
+          <div testid="restaurant-details-loader" className="loader-container">
             <Loader type="ThreeDots" color="orange" height="50" width="50" />
           </div>
         ) : (
@@ -125,9 +123,9 @@ class SpecificRestaurant extends Component {
                 <p className="rests-cuisine">{location}</p>
                 <div className="rating-and-two">
                   <div className="for-twos">
-                    <h1 className="rest-star">
+                    <p className="rest-star">
                       <FaStar /> {rating}
-                    </h1>
+                    </p>
                     <p className="rests-cuisine">{reviews}+ Ratings</p>
                   </div>
                   <div className="for-two">

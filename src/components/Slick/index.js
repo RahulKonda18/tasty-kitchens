@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 // https://apis.ccbp.in/restaurants-list/offers
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
@@ -52,12 +53,12 @@ class Slick extends Component {
       <Slider {...settings}>
         {data.map(each => (
           <div key={each.id} className="slider-item">
-            <img className="item" src={each.imageUrl} alt="carousel " />
+            <img className="item" src={each.imageUrl} alt="offer " />
           </div>
         ))}
       </Slider>
     ) : (
-      <div data-testid="restaurants-list-loader" className="loader-container">
+      <div testid="restaurants-offers-loader" className="loader-container">
         <Loader type="ThreeDots" color="orange" height="50" width="50" />
       </div>
     )

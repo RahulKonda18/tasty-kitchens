@@ -45,18 +45,22 @@ class NavBar extends Component {
             </div>
           </Link>
           <ul className="nav-list-lg">
-            <li
-              onClick={this.navToHome}
-              className={active ? 'active' : 'not-active'}
-            >
-              Home
-            </li>
-            <li
-              onClick={this.navToCart}
-              className={!active ? 'active' : 'not-active'}
-            >
-              Cart
-            </li>
+            <Link to="/" style={{'text-decoration': 'none'}}>
+              <li
+                onClick={this.navToHome}
+                className={active ? 'active' : 'not-active'}
+              >
+                Home
+              </li>
+            </Link>
+            <Link to="/cart" style={{'text-decoration': 'none'}}>
+              <li
+                onClick={this.navToCart}
+                className={!active ? 'active' : 'not-active'}
+              >
+                Cart
+              </li>
+            </Link>
             <li>
               <button
                 type="button"
@@ -71,18 +75,22 @@ class NavBar extends Component {
         </nav>
         <nav className={displayItems ? 'nav-row' : 'nav-items-2'}>
           <ul className="nav-list-lg2">
-            <li
-              onClick={this.navToHome}
-              className={active ? 'active' : 'not-active'}
-            >
-              Home
-            </li>
-            <li
-              onClick={this.navToCart}
-              className={!active ? 'active' : 'not-active'}
-            >
-              Cart
-            </li>
+            <Link to="/" style={{'text-decoration': 'none'}}>
+              <li
+                onClick={this.navToHome}
+                className={active ? 'active' : 'not-active'}
+              >
+                Home
+              </li>
+            </Link>
+            <Link to="/cart" style={{'text-decoration': 'none'}}>
+              <li
+                onClick={this.navToCart}
+                className={!active ? 'active' : 'not-active'}
+              >
+                Cart
+              </li>
+            </Link>
             <li>
               <button
                 type="button"

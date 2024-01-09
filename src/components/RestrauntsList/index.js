@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {MdSort} from 'react-icons/md'
@@ -129,10 +130,7 @@ class RestrauntsList extends Component {
         </div>
         <hr className="hr" />
         {isLoading ? (
-          <div
-            data-testid="restaurants-list-loader"
-            className="loader-container"
-          >
+          <div testid="restaurants-list-loader" className="loader-container">
             <Loader type="ThreeDots" color="orange" height="50" width="50" />
           </div>
         ) : (

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {FaArrowCircleLeft, FaArrowCircleRight} from 'react-icons/fa'
 import './index.css'
 
@@ -14,9 +15,21 @@ const Pagination = props => {
 
   return (
     <div className="pagination">
-      <FaArrowCircleLeft size={20} onClick={onDecrement} />
-      <p className="active-page">{active} of 4</p>
-      <FaArrowCircleRight size={20} onClick={onIncrement} />
+      <FaArrowCircleLeft
+        size={20}
+        onClick={onDecrement}
+        type="button"
+        test-id="pagination-left-button"
+      />
+      <p className="active-page">
+        <span test-id="active-page-number">{active}</span> of 4
+      </p>
+      <FaArrowCircleRight
+        size={20}
+        onClick={onIncrement}
+        type="button"
+        test-id="pagination-right-button"
+      />
     </div>
   )
 }

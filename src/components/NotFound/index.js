@@ -1,11 +1,11 @@
+import {Link} from 'react-router-dom'
 import notFound from '../Images/NotFound.png'
 import './index.css'
 
 const NotFound = props => {
   const home = () => {
     const {history} = props
-    console.log('clicked')
-    return history.replace('/')
+    history.push('/')
   }
   return (
     <div className="not-found-container">
@@ -15,9 +15,11 @@ const NotFound = props => {
         We are sorry, the page you requested could not be found. Please go back
         to the homepage
       </p>
-      <button onClick={home} className="not-found-button" type="button">
-        Home Page
-      </button>
+      <Link to="/">
+        <button className="not-found-button" type="button" onClick={home}>
+          Home Page
+        </button>
+      </Link>
     </div>
   )
 }

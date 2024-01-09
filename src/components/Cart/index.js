@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import NavBar from '../NavBar'
 import Footer from '../Footer'
@@ -83,8 +84,10 @@ class Cart extends Component {
               <hr className="dashed" />
             </div>
             <div className="tot">
-              <p className="t">Order Total</p>
-              <p className="t">₹{total}</p>
+              <h1 className="t">Order Total:</h1>
+              <p test-id="total-price" className="t">
+                ₹{total}
+              </p>
             </div>
             <div className="end">
               <button

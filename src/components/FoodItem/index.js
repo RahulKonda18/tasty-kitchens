@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unknown-property */
 import {FaStar} from 'react-icons/fa'
-import {FiMinusSquare, FiPlusSquare} from 'react-icons/fi'
+// import {FiMinusSquare, FiPlusSquare} from 'react-icons/fi'
 import './index.css'
 
 const FoodItem = props => {
@@ -15,7 +16,7 @@ const FoodItem = props => {
   }
 
   return (
-    <li className="food-item">
+    <li className="food-item" test-id="foodItem">
       <img className="food-image" src={imgUrl} alt="img" />
       <div className="food-desc">
         <h1 className="food-name">{name}</h1>
@@ -26,13 +27,30 @@ const FoodItem = props => {
         </h2>
         {quantity === 0 ? (
           <button className="button-add" type="button" onClick={onIncrement}>
-            ADD
+            Add
           </button>
         ) : (
           <div className="plus-minus">
-            <FiMinusSquare color="#0F172A" size={20} onClick={onDecrement} />{' '}
-            <p className="quantity">{quantity}</p>
-            <FiPlusSquare color="#0F172A" size={20} onClick={onIncrement} />
+            <button
+              className="pm"
+              type="button"
+              onClick={onDecrement}
+              test-id="decrement-count"
+            >
+              -
+            </button>
+
+            <p className="quantity" test-id="active-count">
+              {quantity}
+            </p>
+            <button
+              className="pm"
+              type="button"
+              onClick={onIncrement}
+              test-id="increment-count"
+            >
+              +
+            </button>
           </div>
         )}
       </div>
