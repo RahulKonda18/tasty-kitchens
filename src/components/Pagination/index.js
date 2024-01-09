@@ -15,21 +15,25 @@ const Pagination = props => {
 
   return (
     <div className="pagination">
-      <FaArrowCircleLeft
-        size={20}
+      <button
+        className="arrows"
         onClick={onDecrement}
         type="button"
-        test-id="pagination-left-button"
-      />
+        testid="pagination-left-button"
+      >
+        ←
+      </button>
       <p className="active-page">
-        <span test-id="active-page-number">{active}</span> of 4
+        <span testid="active-page-number">{active}</span> of 4
       </p>
-      <FaArrowCircleRight
-        size={20}
+      <button
+        className="arrows"
         onClick={onIncrement}
         type="button"
-        test-id="pagination-right-button"
-      />
+        testid="pagination-right-button"
+      >
+        →
+      </button>
     </div>
   )
 }
