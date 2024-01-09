@@ -9,7 +9,7 @@ import Cart from './components/Cart'
 import './App.css'
 
 const App = () => {
-  localStorage.setItem('cart', JSON.stringify([]))
+  localStorage.setItem('cartData', JSON.stringify([]))
   return (
     <Switch>
       <Route exact path="/login" component={Login} />

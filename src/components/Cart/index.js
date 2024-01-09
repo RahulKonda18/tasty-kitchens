@@ -10,7 +10,7 @@ class Cart extends Component {
   state = {foodItems: [], total: 0}
 
   componentDidMount() {
-    const a = localStorage.getItem('cart')
+    const a = localStorage.getItem('cartData')
     const b = JSON.parse(a)
     let price = 0
     const j = b.forEach(each => {
@@ -26,7 +26,7 @@ class Cart extends Component {
     const x = foodItems.find(each => each.id === id)
     console.log(x)
     x.quantity += 1
-    localStorage.setItem('cart', JSON.stringify(foodItems))
+    localStorage.setItem('cartData', JSON.stringify(foodItems))
     let price = 0
     const j = foodItems.map(each => {
       price += each.cost * each.quantity
@@ -51,7 +51,7 @@ class Cart extends Component {
       return 1
     })
     console.log(j)
-    localStorage.setItem('cart', JSON.stringify(o))
+    localStorage.setItem('cartData', JSON.stringify(o))
     this.setState({foodItems: [...o], total: price})
   }
 
@@ -85,7 +85,7 @@ class Cart extends Component {
             </div>
             <div className="tot">
               <h1 className="t">Order Total:</h1>
-              <p test-id="total-price" className="t">
+              <p testid="total-price" className="t">
                 ₹{total}
               </p>
             </div>

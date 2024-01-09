@@ -5,39 +5,16 @@
   margin-left: 25px;
   margin-right: 25px;
 }
-.plus-minus {
-  height: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 5px;
-}
-.cart-image {
-  width: 300px;
-  height: 200px;
-  flex-shrink: 0;
-  border-radius: 20px;
-}
-.carts {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.heads {
-  font-size: 30px;
-}
-.det {
-  margin-left: 20px;
-}
-.yellow {
-  color: #ffa412;
-}
+
 .lk {
   list-style-type: none;
   padding-left: 0px;
   margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100vw;
+  justify-content: center;
 }
 @media screen and (max-width: 768px) {
   .cart-image {

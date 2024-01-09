@@ -16,7 +16,7 @@ const HomeRestrauntItem = props => {
     <li
       onClick={loadRestraunt}
       className="restraunt-item-row"
-      test-id="restaurant-item"
+      testid="restaurant-item"
     >
       <div className="image-c">
         <img src={imgUrl} alt="restaurant" className="rest-image" />

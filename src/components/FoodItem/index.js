@@ -16,7 +16,7 @@ const FoodItem = props => {
   }
 
   return (
-    <li className="food-item" test-id="foodItem">
+    <li className="food-item" testid="foodItem">
       <img className="food-image" src={imgUrl} alt="img" />
       <div className="food-desc">
         <h1 className="food-name">{name}</h1>
@@ -35,19 +35,19 @@ const FoodItem = props => {
               className="pm"
               type="button"
               onClick={onDecrement}
-              test-id="decrement-count"
+              testid="decrement-count"
             >
               -
             </button>
 
-            <p className="quantity" test-id="active-count">
+            <p className="quantity" testid="active-count">
               {quantity}
             </p>
             <button
               className="pm"
               type="button"
               onClick={onIncrement}
-              test-id="increment-count"
+              testid="increment-count"
             >
               +
             </button>

@@ -3,6 +3,7 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import img from '../Images/Large-Login.jpeg'
 import logo from '../Images/logo.png'
+import small from '../Images/SmallLogin.png'
 import './index.css'
 
 class Login extends Component {
@@ -52,6 +53,9 @@ class Login extends Component {
     return (
       <div className="login-background">
         <div className="left-part">
+          <div className="rig">
+            <img src={small} alt="website logo" />
+          </div>
           <form className="login-card" onSubmit={this.onSubmitForm}>
             <img src={logo} alt="website logo" className="login-logo" />
             <h1 className="logo-name">Tasty Kitchens</h1>
@@ -89,45 +93,6 @@ class Login extends Component {
           </form>
         </div>
         <img src={img} alt="website login" className="image-login" />
-        <div className="mobile-container">
-          <div className="top-bg">
-            <img src={logo} alt="website logo" className="login-logo" />
-            <h1 className="logo-name">Tasty Kitchens</h1>
-            <h1 className="login-text-mobile">Login</h1>
-          </div>
-          <form className="login-card-mobile" onSubmit={this.onSubmitForm}>
-            <div className="left-align">
-              <label htmlFor="username2" className="labels">
-                USERNAME
-              </label>
-              <input
-                type="text"
-                onChange={this.onChangeUsername}
-                className="input"
-                id="username2"
-                value={username}
-              />
-            </div>
-            <div className="left-align">
-              <label className="labels" htmlFor="password2">
-                PASSWORD
-              </label>
-              <input
-                type="password"
-                onChange={this.onChangePassword}
-                className="input"
-                id="password2"
-                value={password}
-              />
-            </div>
-            <div className="error">
-              <p className="error-msg">{msg}</p>
-            </div>
-            <button type="submit" className="login-button">
-              Login
-            </button>
-          </form>
-        </div>
       </div>
     )
   }

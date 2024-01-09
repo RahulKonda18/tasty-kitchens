@@ -44,7 +44,7 @@ class SpecificRestaurant extends Component {
     }
     const foodItems = data.food_items.map(each => {
       let p = 0
-      const v = JSON.parse(localStorage.getItem('cart')).find(
+      const v = JSON.parse(localStorage.getItem('cartData')).find(
         e => e.id === each.id,
       )
       if (v !== undefined) {
@@ -64,7 +64,7 @@ class SpecificRestaurant extends Component {
   }
 
   onIncrement = id => {
-    const car = localStorage.getItem('cart')
+    const car = localStorage.getItem('cartData')
     const cart = JSON.parse(car)
     const {foodItems} = this.state
     const x = foodItems.find(each => each.id === id)
@@ -82,12 +82,12 @@ class SpecificRestaurant extends Component {
       y.quantity += 1
     }
     console.log(cart)
-    localStorage.setItem('cart', JSON.stringify(cart))
+    localStorage.setItem('cartData', JSON.stringify(cart))
     this.setState({foodItems: [...foodItems]})
   }
 
   onDecrement = id => {
-    const car = localStorage.getItem('cart')
+    const car = localStorage.getItem('cartData')
     let cart = JSON.parse(car)
     const {foodItems} = this.state
     const x = foodItems.find(each => each.id === id)
@@ -98,7 +98,7 @@ class SpecificRestaurant extends Component {
       cart = cart.filter(each => each.id !== id)
     }
 
-    localStorage.setItem('cart', JSON.stringify(cart))
+    localStorage.setItem('cartData', JSON.stringify(cart))
 
     this.setState({foodItems: [...foodItems]})
   }
