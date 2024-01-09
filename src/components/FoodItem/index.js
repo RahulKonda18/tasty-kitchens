@@ -17,20 +17,20 @@ const FoodItem = props => {
 
   return (
     <li className="food-item" testid="foodItem">
-      <img className="food-image" src={imgUrl} alt="img" />
+      <img className="food-image" src={imgUrl} alt="food-item" />
       <div className="food-desc">
         <h1 className="food-name">{name}</h1>
         <p className="food-cost">₹{cost}</p>
-        <h2 className="food-names">
+        <p className="food-names">
           <FaStar color="#ffa412" />
           {rating}
-        </h2>
+        </p>
         {quantity === 0 ? (
           <button className="button-add" type="button" onClick={onIncrement}>
             Add
           </button>
         ) : (
-          <div className="plus-minus">
+          <div className="plus-minus" id={id}>
             <button
               className="pm"
               type="button"

@@ -129,9 +129,9 @@ class SpecificRestaurant extends Component {
                     <p className="rests-cuisine">{reviews}+ Ratings</p>
                   </div>
                   <div className="for-two">
-                    <h1 className="rest-star">
+                    <p className="rest-star">
                       <FaRupeeSign /> {costOfTwo}
-                    </h1>
+                    </p>
                     <p className="rests-cuisine">Cost for two</p>
                   </div>
                 </div>
