@@ -11,7 +11,7 @@ class NavBar extends Component {
   onClickLogout = () => {
     const {history} = this.props
     Cookies.remove('jwt_token')
-    history.push('/')
+    history.replace('/')
   }
 
   change = () => {
